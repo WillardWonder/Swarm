@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatWalker Teams — Team Pricing & Order Planning</title>
+  <meta name="description" content="MatWalker team pricing overview for wrestling clubs and school programs. Plan your 10, 25, or 50+ pair rollout." />
+  <link rel="canonical" href="/business/site-matwalker/teams.html" />
+  <meta property="og:title" content="MatWalker Teams — Team Pricing & Order Planning" />
+  <meta property="og:description" content="Plan your MatWalker team rollout with 10, 25, and 50+ pair pricing tiers plus a downloadable order worksheet." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/business/site-matwalker/teams.html" />
+  <meta property="og:image" content="./shoe-2.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MatWalker Teams — Team Pricing & Order Planning" />
+  <meta name="twitter:description" content="Plan your MatWalker team rollout with 10, 25, and 50+ pair pricing tiers plus a downloadable order worksheet." />
+  <meta name="twitter:image" content="./shoe-2.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "MatWalker Teams — Team Pricing & Order Planning",
+    "url": "/business/site-matwalker/teams.html",
+    "description": "Team pricing overview for wrestling clubs and school programs with 10, 25, and 50+ pair rollout planning.",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Wrestling coaches and club directors"
+    },
+    "about": {
+      "@type": "Product",
+      "name": "MatWalker training footwear"
+    }
+  }
+  </script>
+</head>
+<body data-page-id="matwalker_teams_v3">
+  <header class="top">
+    <div class="wrap nav">
+      <a class="logo" href="./index.html" style="text-decoration:none;color:inherit;">MATWALKER</a>
+      <div class="nav-links">
+        <a href="./teams.html">Teams</a>
+        <a href="./pilot.html">Pilot</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./coaches.html">Coaches</a>
+        <a href="./parents.html">Parents</a>
+      </div>
+      <a class="btn ghost" href="./index.html#waitlist" data-track="cta_nav_get_team_pricing">Get Team Pricing</a>
+    </div>
+  </header>
+
+  <main class="wrap section">
+    <p class="kicker">Teams</p>
+    <h1>Team pricing that fits real wrestling room budgets.</h1>
+    <p class="sub">Use this page to estimate your order size and decide whether to start with a pilot batch or full-room rollout.</p>
+
+    <section class="section" style="padding-left:0;padding-right:0;">
+      <h2>Order Tier Snapshot</h2>
+      <div class="grid">
+        <article>
+          <h3>10+ Pairs</h3>
+          <p>Best for a test group or smaller room. Useful when validating sizing mix and wear patterns.</p>
+          <p class="fine" data-tier-preview="10">Estimated planning price loads from assumptions…</p>
+        </article>
+        <article>
+          <h3>25+ Pairs</h3>
+          <p>Good seasonal restock tier for established teams with recurring footwear turnover.</p>
+          <p class="fine" data-tier-preview="25">Estimated planning price loads from assumptions…</p>
+        </article>
+        <article>
+          <h3>50+ Pairs</h3>
+          <p>Best for club-scale volume and partner-level launch discussions.</p>
+          <p class="fine" data-tier-preview="50">Estimated planning price loads from assumptions…</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" style="padding-left:0;padding-right:0;">
+      <h2>Fast Internal Worksheet</h2>
+      <div class="steps">
+        <article><h3>1) Count Active Athletes</h3><p>How many athletes train at least 3x per week?</p></article>
+        <article><h3>2) Split by Age/Size Bands</h3><p>Estimate youth vs high-school sizing proportions before requesting your grid.</p></article>
+        <article><h3>3) Pick Rollout Path</h3><p>Choose pilot-first or full-room order based on budget timing.</p></article>
+      </div>
+      <p><a class="btn ghost" href="./team-order-planning-template.csv" download data-track="cta_download_order_template">Download Team Order Template (CSV)</a></p>
+      <p><a class="btn" href="./pilot.html" data-track="cta_view_pilot_from_teams">See Pilot Program Details</a></p>
+    </section>
+
+    <section class="section" style="padding-left:0;padding-right:0;">
+      <h2>Quick Budget Estimator (Internal Planning)</h2>
+      <p class="sub">Use this for rough planning before final pricing approval. Values are assumptions only and should be replaced with your final tier sheet.</p>
+      <div class="estimator">
+        <label>Estimated Pair Count
+          <input id="est-pairs" type="number" min="1" step="1" value="25" />
+        </label>
+        <label>Planning Path
+          <select id="est-path">
+            <option value="pilot">Pilot-first (smaller first batch)</option>
+            <option value="full">Full-room rollout</option>
+          </select>
+        </label>
+        <label>Base Price per Pair (USD)
+          <input id="est-base" type="number" min="1" step="1" value="52" />
+        </label>
+      </div>
+      <button class="btn" id="est-calc" type="button">Calculate Budget Range</button>
+      <div class="est-results" id="est-results" aria-live="polite">
+        Enter values, then click calculate.
+      </div>
+      <p class="fine" id="est-assumption-note">Estimator assumptions load from local pricing config.</p>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>© MatWalker — Training footwear for wrestlers.</p>
+    <p><a href="./index.html">Home</a> · <a href="./pilot.html">Pilot</a> · <a href="./faq.html">FAQ</a> · <a href="./coaches.html">Coaches</a> · <a href="./parents.html">Parents</a></p>
+  </footer>
+
+  <script src="./analytics.js"></script>
+  <script>
+    (function () {
+      if (!window.MatWalkerAnalytics) return;
+      var track = window.MatWalkerAnalytics.track;
+      window.MatWalkerAnalytics.bindTrackedClicks();
+      track('view_page_teams');
+
+      var calcBtn = document.getElementById('est-calc');
+      var pairInput = document.getElementById('est-pairs');
+      var pathInput = document.getElementById('est-path');
+      var baseInput = document.getElementById('est-base');
+      var resultBox = document.getElementById('est-results');
+      var assumptionNote = document.getElementById('est-assumption-note');
+
+      var assumptions = {
+        version: 'pricing_v1',
+        base_price_default: 52,
+        max_discount_pct: 30,
+        pilot_extra_discount_pct: 3,
+        spend_range_low_pct: 95,
+        spend_range_high_pct: 108,
+        volume_discounts: [
+          { min_pairs: 50, discount_pct: 14 },
+          { min_pairs: 25, discount_pct: 8 },
+          { min_pairs: 10, discount_pct: 0 }
+        ]
+      };
+
+      function tierDiscountPct(pairs, tiers) {
+        for (var i = 0; i < tiers.length; i += 1) {
+          if (pairs >= Number(tiers[i].min_pairs || 0)) return Number(tiers[i].discount_pct || 0);
+        }
+        return 0;
+      }
+
+      function hydrateEstimatorDefaults(config) {
+        if (!baseInput || !pathInput || !pairInput) return;
+        if (!baseInput.value || Number(baseInput.value) <= 0) {
+          baseInput.value = Number(config.base_price_default || 52);
+        }
+      }
+
+      function renderAssumptionNote(config) {
+        if (!assumptionNote) return;
+        var tiers = (config.volume_discounts || [])
+          .map(function (tier) {
+            return String(Number(tier.min_pairs || 0)) + '+ = ' + String(Number(tier.discount_pct || 0)) + '%';
+          })
+          .join(', ');
+        var pilot = Number(config.pilot_extra_discount_pct || 0);
+        assumptionNote.textContent = 'Estimator uses pricing config (' + String(config.version || 'pricing_v1') + '): ' + tiers + ', plus ' + pilot + '% pilot-first adjustment.';
+      }
+
+      function renderTierPreview(config) {
+        var base = Number(config.base_price_default || 52);
+        var tiers = [10, 25, 50];
+
+        tiers.forEach(function (minPairs) {
+          var slot = document.querySelector('[data-tier-preview="' + String(minPairs) + '"]');
+          if (!slot) return;
+
+          var volumeDiscPct = tierDiscountPct(minPairs, config.volume_discounts || []);
+          var fullPrice = base * (1 - (volumeDiscPct / 100));
+          var pilotPrice = base * (1 - (Math.min(Number(config.max_discount_pct || 30), volumeDiscPct + Number(config.pilot_extra_discount_pct || 0)) / 100));
+
+          slot.textContent = 'Planning estimate: $' + fullPrice.toFixed(2) + '/pair full rollout • $' + pilotPrice.toFixed(2) + '/pair pilot-first (' + String(config.version || 'pricing_v1') + ').';
+        });
+      }
+
+      function loadPricingAssumptions() {
+        return fetch('./pricing-assumptions.json', { cache: 'no-store' })
+          .then(function (response) {
+            if (!response.ok) throw new Error('non-200 assumptions response');
+            return response.json();
+          })
+          .then(function (json) {
+            assumptions = Object.assign({}, assumptions, json || {});
+            hydrateEstimatorDefaults(assumptions);
+            renderAssumptionNote(assumptions);
+            renderTierPreview(assumptions);
+          })
+          .catch(function () {
+            hydrateEstimatorDefaults(assumptions);
+            renderAssumptionNote(assumptions);
+            renderTierPreview(assumptions);
+          });
+      }
+
+      if (calcBtn && pairInput && pathInput && baseInput && resultBox) {
+        loadPricingAssumptions();
+
+        calcBtn.addEventListener('click', function () {
+          var pairs = Math.max(1, parseInt(pairInput.value || '1', 10));
+          var base = Math.max(1, parseFloat(baseInput.value || '1'));
+          var path = pathInput.value === 'full' ? 'full' : 'pilot';
+
+          var volumeDiscPct = tierDiscountPct(pairs, assumptions.volume_discounts || []);
+          var pilotDiscPct = path === 'pilot' ? Number(assumptions.pilot_extra_discount_pct || 0) : 0;
+          var maxDiscountPct = Number(assumptions.max_discount_pct || 30);
+          var totalDiscPct = Math.min(maxDiscountPct, volumeDiscPct + pilotDiscPct);
+          var estPrice = base * (1 - (totalDiscPct / 100));
+          var estTotal = estPrice * pairs;
+          var bufferLow = estTotal * (Number(assumptions.spend_range_low_pct || 95) / 100);
+          var bufferHigh = estTotal * (Number(assumptions.spend_range_high_pct || 108) / 100);
+
+          resultBox.innerHTML = '<strong>Estimated spend:</strong> $' + Math.round(bufferLow).toLocaleString() + '–$' + Math.round(bufferHigh).toLocaleString() +
+            ' <br/><span class="fine">Assumed effective pair price: $' + estPrice.toFixed(2) + ' (' + Math.round(totalDiscPct) + '% discount from base)</span>';
+
+          track('calc_team_budget', {
+            pair_count: pairs,
+            planning_path: path,
+            base_price: base,
+            applied_discount_pct: Math.round(totalDiscPct),
+            pricing_version: assumptions.version || 'pricing_v1'
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
