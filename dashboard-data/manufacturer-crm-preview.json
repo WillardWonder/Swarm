@@ -1,5 +1,5 @@
 {
-  "count": 3,
+  "count": 6,
   "rows": [
     {
       "record_id": "MFG-0001",
@@ -33,6 +33,39 @@
       "status": "research",
       "next_action": "Request full quote sheet including customization and tooling costs",
       "next_action_due": "2026-03-26"
+    },
+    {
+      "record_id": "MFG-0101",
+      "manufacturer_name": "Jessica Sock Shoe MFG",
+      "platform": "WhatsApp",
+      "product_type": "Hybrid Wrestling Sock Shoe (Flyknit high-top, DI hard TPR)",
+      "moq": "1000 trial target",
+      "unit_cost_500": "",
+      "status": "active-quote-pending",
+      "next_action": "Follow up for PI + confirm Shore A 60-65 on invoice and mold bottom photo",
+      "next_action_due": "2026-03-26"
+    },
+    {
+      "record_id": "MFG-0102",
+      "manufacturer_name": "Miss Grace Red Sock Watershoe",
+      "platform": "WhatsApp",
+      "product_type": "Flyknit high-top + boxing-style outsole sample",
+      "moq": "300",
+      "unit_cost_500": "",
+      "status": "technical-fit-risk",
+      "next_action": "Request revised sample with heel-lock mechanism (strap/instep) and youth+adult sizing proof",
+      "next_action_due": "2026-03-27"
+    },
+    {
+      "record_id": "MFG-0103",
+      "manufacturer_name": "Mr. Barry Hardball Water Shoe",
+      "platform": "WhatsApp/Made-in-China",
+      "product_type": "High-top flyknit/neoprene sock-shoe with hard sole",
+      "moq": "1000 pilot discussed (supplier asked 2000)",
+      "unit_cost_500": "",
+      "status": "active-iteration",
+      "next_action": "Get one new flyknit sample with elastic instep strap; confirm size scalability and upper mold requirements",
+      "next_action_due": "2026-03-25"
     }
   ]
 }
