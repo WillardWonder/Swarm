@@ -1,0 +1,6 @@
+name = "swarm-control-api"
+main = "worker.js"
+compatibility_date = "2026-03-24"
+
+[vars]
+ALLOWED_ORIGIN = "https://willardwonder.github.io"
