@@ -1,0 +1,104 @@
+[
+  {
+    "id": "00c739d6",
+    "subject": "Synthesize v1 build plan",
+    "description": "",
+    "status": "completed",
+    "owner": "fitmap-lead",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T13:58:46.732209+00:00",
+    "createdAt": "2026-03-20T13:54:02.401278+00:00",
+    "updatedAt": "2026-03-20T13:58:47.082964+00:00",
+    "metadata": {
+      "duration_seconds": 0.35
+    }
+  },
+  {
+    "id": "27ba8a16",
+    "subject": "Design normalized ingestion schema",
+    "description": "",
+    "status": "completed",
+    "owner": "api-ingestion",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T13:56:33.756490+00:00",
+    "createdAt": "2026-03-20T13:54:02.400170+00:00",
+    "updatedAt": "2026-03-20T13:56:34.102839+00:00",
+    "metadata": {
+      "duration_seconds": 0.35
+    }
+  },
+  {
+    "id": "2fe33051",
+    "subject": "Ship map MVP UI with sample dataset",
+    "description": "",
+    "status": "completed",
+    "owner": "map-frontend",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T13:59:10.686684+00:00",
+    "createdAt": "2026-03-20T13:54:02.400443+00:00",
+    "updatedAt": "2026-03-20T14:00:03.283399+00:00",
+    "metadata": {
+      "duration_seconds": 52.6
+    }
+  },
+  {
+    "id": "30dcb885",
+    "subject": "Approve data source matrix",
+    "description": "",
+    "status": "completed",
+    "owner": "data-compliance",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T14:00:29.890279+00:00",
+    "createdAt": "2026-03-20T13:54:02.399877+00:00",
+    "updatedAt": "2026-03-20T14:01:10.393904+00:00",
+    "metadata": {
+      "duration_seconds": 40.5
+    }
+  },
+  {
+    "id": "9ff00345",
+    "subject": "Define aggregation and privacy thresholds",
+    "description": "",
+    "status": "completed",
+    "owner": "geo-analytics",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T13:57:28.598753+00:00",
+    "createdAt": "2026-03-20T13:54:02.400709+00:00",
+    "updatedAt": "2026-03-20T13:57:28.940506+00:00",
+    "metadata": {
+      "duration_seconds": 0.34
+    }
+  },
+  {
+    "id": "edd9a598",
+    "subject": "Provide LAN + free hosting deployment plan",
+    "description": "",
+    "status": "completed",
+    "owner": "deploy-ops",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T13:55:18.741680+00:00",
+    "createdAt": "2026-03-20T13:54:02.401009+00:00",
+    "updatedAt": "2026-03-20T13:55:24.460703+00:00",
+    "metadata": {
+      "duration_seconds": 5.72
+    }
+  }
+]

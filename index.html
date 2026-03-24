@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Swarm Control Center (Cloud View)</title>
+<style>
+body{margin:0;background:#0b1220;color:#eaf0ff;font-family:Inter,Arial,sans-serif}header{padding:14px 18px;border-bottom:1px solid #253454;display:flex;justify-content:space-between;align-items:center}
+.wrap{max-width:1200px;margin:0 auto;padding:16px} .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px} .card{background:#111a2c;border:1px solid #2a3d64;border-radius:12px;padding:12px}
+.small{font-size:12px;color:#aebcdb}.kpi{font-size:26px;font-weight:700}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #223250;font-size:13px;text-align:left}
+.tag{font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid #355082}.pending{color:#ffd166}.completed{color:#7bd389}.enabled{color:#7bd389}.disabled{color:#ff7b7b}
+@media(max-width:980px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<header><div><strong>Swarm Control Center (GitHub Pages)</strong><div class="small">Read-only cloud dashboard snapshot</div></div><button onclick="loadAll()">Refresh</button></header>
+<div class="wrap">
+  <div class="card" style="margin-bottom:12px">
+    <div><b>Note:</b> This cloud dashboard is read-only. Live chat/control remains on your LAN control center.</div>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="small">MatWalker Core Tasks</div><div id="kpi-core" class="kpi">-</div></div>
+    <div class="card"><div class="small">Web/Growth Tasks</div><div id="kpi-web" class="kpi">-</div></div>
+    <div class="card"><div class="small">Fitness Map Completed</div><div id="kpi-fit" class="kpi">-</div></div>
+  </div>
+
+  <div class="grid" style="margin-top:12px">
+    <div class="card"><h3>MatWalker Core Tasks</h3><table><thead><tr><th>Task</th><th>Owner</th><th>Status</th></tr></thead><tbody id="core-body"></tbody></table></div>
+    <div class="card"><h3>Web/Growth Tasks</h3><table><thead><tr><th>Task</th><th>Owner</th><th>Status</th></tr></thead><tbody id="web-body"></tbody></table></div>
+    <div class="card"><h3>Fitness Map Tasks</h3><table><thead><tr><th>Task</th><th>Owner</th><th>Status</th></tr></thead><tbody id="fit-body"></tbody></table></div>
+  </div>
+
+  <div class="card" style="margin-top:12px"><h3>Cron Jobs</h3><table><thead><tr><th>Name</th><th>Schedule</th><th>Status</th></tr></thead><tbody id="cron-body"></tbody></table></div>
+</div>
+<script>
+async function getJSON(path){const r=await fetch(path); if(!r.ok) throw new Error(path); return r.json();}
+function row(t,owner,status){const cls=status==='completed'?'completed':'pending'; return `<tr><td>${t}</td><td>${owner||''}</td><td><span class='tag ${cls}'>${status}</span></td></tr>`}
+async function loadAll(){
+  try{
+    const [core,web,fit,cron] = await Promise.all([
+      getJSON('./dashboard-data/matwalker-core-tasks.json'),
+      getJSON('./dashboard-data/matwalker-web-growth-tasks.json'),
+      getJSON('./dashboard-data/fitness-map-safe-tasks.json'),
+      getJSON('./dashboard-data/cron-jobs.json')
+    ]);
+    document.getElementById('kpi-core').textContent = core.length;
+    document.getElementById('kpi-web').textContent = web.length;
+    document.getElementById('kpi-fit').textContent = fit.filter(x=>x.status==='completed').length;
+    document.getElementById('core-body').innerHTML = core.map(x=>row(x.subject,x.owner,x.status)).join('');
+    document.getElementById('web-body').innerHTML = web.map(x=>row(x.subject,x.owner,x.status)).join('');
+    document.getElementById('fit-body').innerHTML = fit.map(x=>row(x.subject,x.owner,x.status)).join('');
+    document.getElementById('cron-body').innerHTML = (cron.jobs||[]).map(j=>`<tr><td>${j.name}</td><td>${j.schedule?.expr||''}</td><td><span class='tag ${j.enabled?'enabled':'disabled'}'>${j.enabled?'enabled':'disabled'}</span></td></tr>`).join('');
+  }catch(e){
+    document.body.insertAdjacentHTML('beforeend', `<div class='wrap'><div class='card'>Failed to load dashboard data: ${e}</div></div>`)
+  }
+}
+loadAll();
+</script>
+</body></html>

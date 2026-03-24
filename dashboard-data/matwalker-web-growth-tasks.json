@@ -1,0 +1,104 @@
+[
+  {
+    "id": "4d72808f",
+    "subject": "Define analytics events and KPI dashboard",
+    "description": "",
+    "status": "completed",
+    "owner": "funnel-analytics",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T15:04:06.773220+00:00",
+    "createdAt": "2026-03-20T13:47:39.292741+00:00",
+    "updatedAt": "2026-03-20T16:36:21.186408+00:00",
+    "metadata": {
+      "duration_seconds": 5534.41
+    }
+  },
+  {
+    "id": "5c8cfbd0",
+    "subject": "Synthesize day-1 execution brief",
+    "description": "",
+    "status": "completed",
+    "owner": "web-growth-lead",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T15:04:07.112428+00:00",
+    "createdAt": "2026-03-20T13:47:39.293047+00:00",
+    "updatedAt": "2026-03-20T16:36:21.525310+00:00",
+    "metadata": {
+      "duration_seconds": 5534.41
+    }
+  },
+  {
+    "id": "7d76c5f9",
+    "subject": "Create traffic flywheel plan + outreach draft queue",
+    "description": "",
+    "status": "completed",
+    "owner": "traffic-ops",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T15:04:06.101072+00:00",
+    "createdAt": "2026-03-20T13:47:39.292475+00:00",
+    "updatedAt": "2026-03-20T16:36:20.488490+00:00",
+    "metadata": {
+      "duration_seconds": 5534.39
+    }
+  },
+  {
+    "id": "d0d38011",
+    "subject": "Set up free-hosting deployment options and pick primary",
+    "description": "",
+    "status": "completed",
+    "owner": "deploy-engineer",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T15:04:06.441190+00:00",
+    "createdAt": "2026-03-20T13:47:39.291930+00:00",
+    "updatedAt": "2026-03-20T16:36:20.835773+00:00",
+    "metadata": {
+      "duration_seconds": 5534.39
+    }
+  },
+  {
+    "id": "da189d2f",
+    "subject": "Create SEO keyword map + 14-day content plan",
+    "description": "",
+    "status": "completed",
+    "owner": "seo-content",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T15:04:05.762568+00:00",
+    "createdAt": "2026-03-20T13:47:39.292205+00:00",
+    "updatedAt": "2026-03-20T16:36:20.147645+00:00",
+    "metadata": {
+      "duration_seconds": 5534.39
+    }
+  },
+  {
+    "id": "f7b8ded0",
+    "subject": "Publish v1 site architecture + page map",
+    "description": "",
+    "status": "completed",
+    "owner": "site-builder",
+    "lockedBy": "",
+    "lockedAt": "",
+    "blocks": [],
+    "blockedBy": [],
+    "startedAt": "2026-03-20T15:04:05.424276+00:00",
+    "createdAt": "2026-03-20T13:47:39.291610+00:00",
+    "updatedAt": "2026-03-20T16:36:19.805827+00:00",
+    "metadata": {
+      "duration_seconds": 5534.38
+    }
+  }
+]

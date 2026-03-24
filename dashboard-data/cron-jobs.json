@@ -1,0 +1,76 @@
+{
+  "jobs": [
+    {
+      "id": "62e5fdaf-658c-4c9f-8664-fd3c220ff6ae",
+      "agentId": "main",
+      "name": "dashboard-data-refresh-5m",
+      "enabled": true,
+      "createdAtMs": 1774016830769,
+      "updatedAtMs": 1774359214867,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/5 * * * *",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run /home/josh/.openclaw/workspace/scripts/refresh-dashboard-data.sh via exec and update business/dashboard-data JSON snapshots only. No external communication."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1774359300000,
+        "lastRunAtMs": 1774359186923,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 27944,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "runningAtMs": 1774359300083
+      }
+    },
+    {
+      "id": "5a64a92f-061d-425b-8749-ebc6258ebb9a",
+      "agentId": "main",
+      "name": "matwalker-15m-autobuild",
+      "enabled": true,
+      "createdAtMs": 1774015877285,
+      "updatedAtMs": 1774359186923,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/15 8-20 * * *",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Project MatWalker autonomous loop (internal-only): continue improving business/site assets using local workspace files only. STRICTLY FORBIDDEN: any external communication or outbound actions (no messages, DMs, posts, emails, comments, reactions, or third-party API calls). Do not use the message tool or send to any external channel/source. Allowed: local file edits, planning docs, internal drafts, CRM structure updates, and execution log append to business/automation/matwalker-autolog.md."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1774359900000,
+        "lastRunAtMs": 1774359000078,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 186845,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    }
+  ],
+  "total": 2,
+  "offset": 0,
+  "limit": 2,
+  "hasMore": false,
+  "nextOffset": null
+}
