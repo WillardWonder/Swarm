@@ -1,0 +1,27 @@
+{
+  "kpis": {
+    "waitlist_conversion_target": "4-8%",
+    "team_pricing_interest_target": "8-15%",
+    "pilot_intent_target": "30%+"
+  },
+  "analytics": [
+    "20+ funnel events defined (CTA, form submit, page views)",
+    "Primary conversion event: form_submit_waitlist",
+    "Variant testing event model included"
+  ],
+  "seo": [
+    "4 keyword clusters mapped (training, laceless, team-buying, pilot)",
+    "14-day content calendar prepared",
+    "Page-level intent mapping included"
+  ],
+  "sales_pipeline": [
+    "Stage model from new -> won/lost/nurture",
+    "Follow-up cadence: Day 0/2/5/10/30+",
+    "SLA rules and objection tagging defined"
+  ],
+  "execution": [
+    "48-hour sprint blocks defined",
+    "Conversion integrity + CRM readiness prioritized",
+    "Risk and done-definition documented"
+  ]
+}

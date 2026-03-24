@@ -1,0 +1,8 @@
+{
+  "columns": ["record_id","manufacturer_name","country","contact_name","whatsapp_number","product_type","moq","sample_cost_usd","unit_cost_100","unit_cost_500","unit_cost_1000","lead_time_days","status","next_action","next_action_due"],
+  "rows": [
+    {"record_id":"MFG-0001","manufacturer_name":"","country":"","contact_name":"","whatsapp_number":"","product_type":"sock-like wrestling training shoe","moq":"","sample_cost_usd":"","unit_cost_100":"","unit_cost_500":"","unit_cost_1000":"","lead_time_days":"","status":"new","next_action":"","next_action_due":""},
+    {"record_id":"MFG-0002","manufacturer_name":"","country":"","contact_name":"","whatsapp_number":"","product_type":"laceless wrestling trainer","moq":"","sample_cost_usd":"","unit_cost_100":"","unit_cost_500":"","unit_cost_1000":"","lead_time_days":"","status":"new","next_action":"","next_action_due":""},
+    {"record_id":"MFG-0003","manufacturer_name":"","country":"","contact_name":"","whatsapp_number":"","product_type":"knit upper combat/training shoe","moq":"","sample_cost_usd":"","unit_cost_100":"","unit_cost_500":"","unit_cost_1000":"","lead_time_days":"","status":"new","next_action":"","next_action_due":""}
+  ]
+}

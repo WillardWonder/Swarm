@@ -28,6 +28,19 @@ body{margin:0;background:#0b1220;color:#eaf0ff;font-family:Inter,Arial,sans-seri
   <div class="card" style="margin-top:12px"><h3>Cron Jobs</h3><table><thead><tr><th>Name</th><th>Schedule</th><th>Status</th></tr></thead><tbody id="cron-body"></tbody></table></div>
 
   <div class="card" style="margin-top:12px">
+    <h3>What the Swarm Actually Produced</h3>
+    <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+      <div><h4>KPI Targets</h4><ul id="kpi-targets"></ul></div>
+      <div><h4>Core Outputs</h4><ul id="core-outputs"></ul></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <h3>Manufacturer CRM Preview</h3>
+    <table><thead><tr><th>ID</th><th>Product Type</th><th>Status</th><th>Next Action</th></tr></thead><tbody id="mfg-body"></tbody></table>
+  </div>
+
+  <div class="card" style="margin-top:12px">
     <h3>Completed Work Artifacts (View Actual Files)</h3>
     <ul>
       <li><b>Site pages:</b> <a href="./artifacts/site/index.html">index</a> · <a href="./artifacts/site/teams.html">teams</a> · <a href="./artifacts/site/pilot.html">pilot</a> · <a href="./artifacts/site/coaches.html">coaches</a> · <a href="./artifacts/site/parents.html">parents</a> · <a href="./artifacts/site/faq.html">faq</a></li>
@@ -43,11 +56,13 @@ async function getJSON(path){const r=await fetch(path); if(!r.ok) throw new Erro
 function row(t,owner,status){const cls=status==='completed'?'completed':'pending'; return `<tr><td>${t}</td><td>${owner||''}</td><td><span class='tag ${cls}'>${status}</span></td></tr>`}
 async function loadAll(){
   try{
-    const [core,web,fit,cron] = await Promise.all([
+    const [core,web,fit,cron,summary,mfg] = await Promise.all([
       getJSON('./dashboard-data/matwalker-core-tasks.json'),
       getJSON('./dashboard-data/matwalker-web-growth-tasks.json'),
       getJSON('./dashboard-data/fitness-map-safe-tasks.json'),
-      getJSON('./dashboard-data/cron-jobs.json')
+      getJSON('./dashboard-data/cron-jobs.json'),
+      getJSON('./dashboard-data/outputs-summary.json'),
+      getJSON('./dashboard-data/manufacturer-crm-preview.json')
     ]);
     document.getElementById('kpi-core').textContent = core.length;
     document.getElementById('kpi-web').textContent = web.length;
@@ -56,6 +71,10 @@ async function loadAll(){
     document.getElementById('web-body').innerHTML = web.map(x=>row(x.subject,x.owner,x.status)).join('');
     document.getElementById('fit-body').innerHTML = fit.map(x=>row(x.subject,x.owner,x.status)).join('');
     document.getElementById('cron-body').innerHTML = (cron.jobs||[]).map(j=>`<tr><td>${j.name}</td><td>${j.schedule?.expr||''}</td><td><span class='tag ${j.enabled?'enabled':'disabled'}'>${j.enabled?'enabled':'disabled'}</span></td></tr>`).join('');
+    document.getElementById('kpi-targets').innerHTML = Object.entries(summary.kpis||{}).map(([k,v])=>`<li><b>${k.replaceAll('_',' ')}:</b> ${v}</li>`).join('');
+    const out = [...(summary.analytics||[]), ...(summary.seo||[]), ...(summary.sales_pipeline||[]), ...(summary.execution||[])];
+    document.getElementById('core-outputs').innerHTML = out.map(x=>`<li>${x}</li>`).join('');
+    document.getElementById('mfg-body').innerHTML = (mfg.rows||[]).map(r=>`<tr><td>${r.record_id||''}</td><td>${r.product_type||''}</td><td>${r.status||''}</td><td>${r.next_action||''}</td></tr>`).join('');
   }catch(e){
     document.body.insertAdjacentHTML('beforeend', `<div class='wrap'><div class='card'>Failed to load dashboard data: ${e}</div></div>`)
   }
