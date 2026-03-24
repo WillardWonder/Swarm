@@ -1,0 +1,89 @@
+{
+  "count": 6,
+  "rows": [
+    {
+      "lead_id": "MW-0004",
+      "org_name": "512 Outlaw Wrestling",
+      "contact_name": "Seamus Burke",
+      "role": "Program Director",
+      "email": "seamus@512owc.org",
+      "phone": "512.925.5299",
+      "city_state": "Cedar Park, TX",
+      "segment": "club",
+      "athlete_count": "25",
+      "status": "new",
+      "next_step": "Send approval-gated intro email draft",
+      "next_step_due": "2026-03-26"
+    },
+    {
+      "lead_id": "MW-0005",
+      "org_name": "Austin Wrestling Academy",
+      "contact_name": "Ryan Norton",
+      "role": "Head Coach",
+      "email": "austinwrestlingacademy@gmail.com",
+      "phone": "",
+      "city_state": "Austin, TX",
+      "segment": "club",
+      "athlete_count": "30",
+      "status": "new",
+      "next_step": "Send approval-gated pilot offer email",
+      "next_step_due": "2026-03-26"
+    },
+    {
+      "lead_id": "MW-0006",
+      "org_name": "Stingers Wrestling Club",
+      "contact_name": "Jason Rodriguez",
+      "role": "Head Coach",
+      "email": "stingerswc@gmail.com",
+      "phone": "",
+      "city_state": "San Marcos, TX",
+      "segment": "club",
+      "athlete_count": "24",
+      "status": "new",
+      "next_step": "Send approval-gated team pricing DM/email",
+      "next_step_due": "2026-03-26"
+    },
+    {
+      "lead_id": "MW-0007",
+      "org_name": "Heart & Pride Wrestling Club",
+      "contact_name": "Randy Bryant",
+      "role": "Head Coach",
+      "email": "heartandpridewcandfitness@gmail.com",
+      "phone": "773-294-7366",
+      "city_state": "Leander, TX",
+      "segment": "club",
+      "athlete_count": "28",
+      "status": "new",
+      "next_step": "Send approval-gated bulk pricing intro",
+      "next_step_due": "2026-03-26"
+    },
+    {
+      "lead_id": "MW-0008",
+      "org_name": "NB Elite",
+      "contact_name": "Steve Horton",
+      "role": "Head Coach",
+      "email": "nbelitewrestling@gmail.com",
+      "phone": "210-323-7539",
+      "city_state": "Schertz, TX",
+      "segment": "club",
+      "athlete_count": "22",
+      "status": "new",
+      "next_step": "Send approval-gated launch partner note",
+      "next_step_due": "2026-03-26"
+    },
+    {
+      "lead_id": "MW-0009",
+      "org_name": "Westlake Youth Wrestling Club",
+      "contact_name": "Jeff Newby",
+      "role": "Head Coach",
+      "email": "jeffnewby@hotmail.com",
+      "phone": "",
+      "city_state": "Austin, TX",
+      "segment": "club",
+      "athlete_count": "20",
+      "status": "new",
+      "next_step": "Send approval-gated coach starter offer",
+      "next_step_due": "2026-03-26"
+    }
+  ]
+}

@@ -36,8 +36,13 @@ body{margin:0;background:#0b1220;color:#eaf0ff;font-family:Inter,Arial,sans-seri
   </div>
 
   <div class="card" style="margin-top:12px">
-    <h3>Manufacturer CRM Preview</h3>
-    <table><thead><tr><th>ID</th><th>Product Type</th><th>Status</th><th>Next Action</th></tr></thead><tbody id="mfg-body"></tbody></table>
+    <h3>Leads Found (Actual)</h3>
+    <table><thead><tr><th>Lead</th><th>Org</th><th>Contact</th><th>City</th><th>Status</th><th>Next Step</th></tr></thead><tbody id="leads-body"></tbody></table>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <h3>Manufacturer CRM (Actual Rows)</h3>
+    <table><thead><tr><th>ID</th><th>Manufacturer</th><th>Platform</th><th>MOQ</th><th>Unit@500</th><th>Status</th><th>Next Action</th></tr></thead><tbody id="mfg-body"></tbody></table>
   </div>
 
   <div class="card" style="margin-top:12px">
@@ -48,6 +53,7 @@ body{margin:0;background:#0b1220;color:#eaf0ff;font-family:Inter,Arial,sans-seri
       <li><b>Marketing:</b> <a href="./artifacts/marketing/matwalker-seo-keyword-map-14day.md">SEO map</a> · <a href="./artifacts/marketing/matwalker-traffic-flywheel-plan.md">traffic flywheel</a> · <a href="./artifacts/marketing/matwalker-analytics-event-spec.md">analytics spec</a></li>
       <li><b>Sales/CRM:</b> <a href="./artifacts/sales/crm.csv">CRM CSV</a> · <a href="./artifacts/sales/outreach-approval-queue.md">outreach queue</a> · <a href="./artifacts/sales/pipeline-cadence-matrix.md">cadence matrix</a> · <a href="./artifacts/sales/crm-field-dictionary.md">field dictionary</a></li>
       <li><b>Execution logs:</b> <a href="./artifacts/automation/matwalker-day1-execution-brief.md">day-1 brief</a> · <a href="./artifacts/automation/matwalker-autolog.md">autolog</a></li>
+      <li><b>Manufacturer research:</b> <a href="./artifacts/product/matwalker-manufacturer-shortlist.md">shortlist</a> · <a href="./artifacts/ops/manufacturer-crm.csv">manufacturer CRM</a> · <a href="./artifacts/ops/manufacturer-negotiation-playbook.md">negotiation playbook</a></li>
     </ul>
   </div>
 </div>
@@ -56,13 +62,14 @@ async function getJSON(path){const r=await fetch(path); if(!r.ok) throw new Erro
 function row(t,owner,status){const cls=status==='completed'?'completed':'pending'; return `<tr><td>${t}</td><td>${owner||''}</td><td><span class='tag ${cls}'>${status}</span></td></tr>`}
 async function loadAll(){
   try{
-    const [core,web,fit,cron,summary,mfg] = await Promise.all([
+    const [core,web,fit,cron,summary,mfg,leads] = await Promise.all([
       getJSON('./dashboard-data/matwalker-core-tasks.json'),
       getJSON('./dashboard-data/matwalker-web-growth-tasks.json'),
       getJSON('./dashboard-data/fitness-map-safe-tasks.json'),
       getJSON('./dashboard-data/cron-jobs.json'),
       getJSON('./dashboard-data/outputs-summary.json'),
-      getJSON('./dashboard-data/manufacturer-crm-preview.json')
+      getJSON('./dashboard-data/manufacturer-crm-preview.json'),
+      getJSON('./dashboard-data/leads-preview.json')
     ]);
     document.getElementById('kpi-core').textContent = core.length;
     document.getElementById('kpi-web').textContent = web.length;
@@ -74,7 +81,8 @@ async function loadAll(){
     document.getElementById('kpi-targets').innerHTML = Object.entries(summary.kpis||{}).map(([k,v])=>`<li><b>${k.replaceAll('_',' ')}:</b> ${v}</li>`).join('');
     const out = [...(summary.analytics||[]), ...(summary.seo||[]), ...(summary.sales_pipeline||[]), ...(summary.execution||[])];
     document.getElementById('core-outputs').innerHTML = out.map(x=>`<li>${x}</li>`).join('');
-    document.getElementById('mfg-body').innerHTML = (mfg.rows||[]).map(r=>`<tr><td>${r.record_id||''}</td><td>${r.product_type||''}</td><td>${r.status||''}</td><td>${r.next_action||''}</td></tr>`).join('');
+    document.getElementById('leads-body').innerHTML = (leads.rows||[]).map(r=>`<tr><td>${r.lead_id||''}</td><td>${r.org_name||''}</td><td>${r.contact_name||''}</td><td>${r.city_state||''}</td><td>${r.status||''}</td><td>${r.next_step||''}</td></tr>`).join('');
+    document.getElementById('mfg-body').innerHTML = (mfg.rows||[]).map(r=>`<tr><td>${r.record_id||''}</td><td>${r.manufacturer_name||''}</td><td>${r.platform||''}</td><td>${r.moq||''}</td><td>${r.unit_cost_500||''}</td><td>${r.status||''}</td><td>${r.next_action||''}</td></tr>`).join('');
   }catch(e){
     document.body.insertAdjacentHTML('beforeend', `<div class='wrap'><div class='card'>Failed to load dashboard data: ${e}</div></div>`)
   }

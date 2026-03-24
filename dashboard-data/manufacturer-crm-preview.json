@@ -1,8 +1,38 @@
 {
-  "columns": ["record_id","manufacturer_name","country","contact_name","whatsapp_number","product_type","moq","sample_cost_usd","unit_cost_100","unit_cost_500","unit_cost_1000","lead_time_days","status","next_action","next_action_due"],
+  "count": 3,
   "rows": [
-    {"record_id":"MFG-0001","manufacturer_name":"","country":"","contact_name":"","whatsapp_number":"","product_type":"sock-like wrestling training shoe","moq":"","sample_cost_usd":"","unit_cost_100":"","unit_cost_500":"","unit_cost_1000":"","lead_time_days":"","status":"new","next_action":"","next_action_due":""},
-    {"record_id":"MFG-0002","manufacturer_name":"","country":"","contact_name":"","whatsapp_number":"","product_type":"laceless wrestling trainer","moq":"","sample_cost_usd":"","unit_cost_100":"","unit_cost_500":"","unit_cost_1000":"","lead_time_days":"","status":"new","next_action":"","next_action_due":""},
-    {"record_id":"MFG-0003","manufacturer_name":"","country":"","contact_name":"","whatsapp_number":"","product_type":"knit upper combat/training shoe","moq":"","sample_cost_usd":"","unit_cost_100":"","unit_cost_500":"","unit_cost_1000":"","lead_time_days":"","status":"new","next_action":"","next_action_due":""}
+    {
+      "record_id": "MFG-0001",
+      "manufacturer_name": "Alibaba Top Sponsor Wrestling OEM (provisional)",
+      "platform": "Alibaba",
+      "product_type": "sock-like wrestling training shoe",
+      "moq": "",
+      "unit_cost_500": "13.20",
+      "status": "research",
+      "next_action": "Send RFQ for exact sock-shoe spec and tier pricing",
+      "next_action_due": "2026-03-26"
+    },
+    {
+      "record_id": "MFG-0002",
+      "manufacturer_name": "Made-in-China Wrestling Category Supplier (provisional)",
+      "platform": "Made-in-China",
+      "product_type": "laceless wrestling trainer",
+      "moq": "50",
+      "unit_cost_500": "9.70",
+      "status": "research",
+      "next_action": "Validate if true wrestling-performance product vs generic fashion sneaker",
+      "next_action_due": "2026-03-26"
+    },
+    {
+      "record_id": "MFG-0003",
+      "manufacturer_name": "Alibaba Custom High-Top Wrestling OEM (provisional)",
+      "platform": "Alibaba",
+      "product_type": "knit upper combat/training shoe",
+      "moq": "",
+      "unit_cost_500": "19.00",
+      "status": "research",
+      "next_action": "Request full quote sheet including customization and tooling costs",
+      "next_action_due": "2026-03-26"
+    }
   ]
 }
