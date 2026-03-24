@@ -1,0 +1,25 @@
+{
+  "profiles": [
+    {
+      "supplier": "Miss Grace Red Sock Watershoe",
+      "messages": 54,
+      "sent_samples": true,
+      "current_status": "technical fit risk; redesign requested",
+      "last_message": "Hello Josh,how are you?"
+    },
+    {
+      "supplier": "Mr. Barry Hardball Water Shoe",
+      "messages": 416,
+      "sent_samples": true,
+      "current_status": "iteration required (heel lock/fit)",
+      "last_message": "Okay"
+    },
+    {
+      "supplier": "Jessica Sock Shoe MFG",
+      "messages": 12,
+      "sent_samples": true,
+      "current_status": "quote/sample PI pending",
+      "last_message": "IMG-20260102-WA0003.jpg (file attached)"
+    }
+  ]
+}
